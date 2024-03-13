@@ -1,10 +1,12 @@
+#region imports
+
 import logging
 import os
 import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
-
+#endregion
 #region Initialize logging
 logging.basicConfig(filename='migration_automation.log', level=logging.INFO, format='%(asctime)s:%(levelname)s:%(message)s')
 # Define a StreamHandler to log to the console
