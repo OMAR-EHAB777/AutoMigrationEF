@@ -1,0 +1,4 @@
+Pipfile
+dist
+build
+auto_migration.spec
