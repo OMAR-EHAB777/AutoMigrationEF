@@ -20,8 +20,8 @@ logging.getLogger().addHandler(console_handler)
 
 #region Define project settings for .NET backend
 script_directory = Path(__file__).parent if __file__ else Path.cwd()
-backend_project_path = Path("D:/OnlineOrdering/Back/Infrastructure")
-backend_repo_path = Path("D:/OnlineOrdering/Back")
+backend_project_path = Path("D:/omar/FERPBACK/Infrastructure")
+backend_repo_path = Path("D:/omar/FERPBACK")
 #endregion
 
 #region Function to run shell commands
@@ -63,9 +63,9 @@ def pull_latest_changes(repo_path):
     """
     try:
         os.chdir(repo_path)
-        run_command('git checkout AutoMigrationtest')
-        logging.info("Checked out AutoMigrationtest.")
-        run_command('git pull origin AutoMigrationtest')
+        run_command('git checkout master')
+        logging.info("Checked out master.")
+        run_command('git pull origin master')
         logging.info("Pulled last changes.")
     except Exception as e:
         logging.error(f"Failed to pull latest changes: {e}")
@@ -138,7 +138,7 @@ def push_changes(repo_path, migration_name):
         os.chdir(repo_path)
         run_command('git add .')
         run_command(f'git commit -m "Added migration {migration_name}"')
-        run_command('git push origin AutoMigrationtest')
+        run_command('git push origin master')
         logging.info("Changes pushed to repository.")
     except Exception as e:
         logging.error(f"An error occurred while pushing changes: {e}")
